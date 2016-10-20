@@ -1,5 +1,3 @@
-
-
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -30,9 +28,9 @@ public class Newservlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int firstnumber = Integer.parseInt(request.getParameter("firstnumber"));
 		int secondnumber = Integer.parseInt(request.getParameter("secondnumber"));
-		int sum = firstnumber +secondnumber;
+		int sum = Getsum(firstnumber, secondnumber);
 		String lowercase = request.getParameter("name");
-		String uppercase = lowercase.toUpperCase();
+		String uppercase = Tran(lowercase);
 		response.setContentType("text/html");
 		
 		PrintWriter out = response.getWriter();
@@ -50,6 +48,17 @@ public class Newservlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+		
+	}
+	
+	protected int Getsum(int firstnumber, int secondnumber)
+	{
+		return firstnumber+secondnumber;
+	}
+	
+	protected String Tran(String input)
+	{
+		return input.toUpperCase();
 	}
 
 }
