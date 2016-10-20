@@ -7,8 +7,8 @@ public class NewservletTest {
 	public void testGetsum() {
 		int firstnumber=10;
 		int secondnumber=12;
-		Newservlet newone = new Newservlet();
-		int result = newone.Getsum(firstnumber, secondnumber);
+		Getsum newone = new Getsum();
+		int result = newone.sum(firstnumber, secondnumber);
 		int testresult=22;
 		assertEquals(result, testresult);
 	}
@@ -16,8 +16,8 @@ public class NewservletTest {
 	@Test
 	public void testTran() {
 		String lowercase="wang";
-		Newservlet newone = new Newservlet();
-		String result=newone.Tran(lowercase);
+		Tran newone = new Tran();
+		String result=newone.doTran(lowercase);
 		String testresult="WANG";	
 		assertEquals(result, testresult);
 	}

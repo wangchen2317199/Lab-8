@@ -28,17 +28,17 @@ public class Newservlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int firstnumber = Integer.parseInt(request.getParameter("firstnumber"));
 		int secondnumber = Integer.parseInt(request.getParameter("secondnumber"));
-		int sum = Getsum(firstnumber, secondnumber);
+		Getsum sum = new Getsum();
+		Tran uppercase =new Tran();
 		String lowercase = request.getParameter("name");
-		String uppercase = Tran(lowercase);
 		response.setContentType("text/html");
 		
 		PrintWriter out = response.getWriter();
 		
 		out.println("<!DOCTYPE html>");
 		out.println("<html><body>");
-		out.println("<p>Welcome "+ uppercase+"!</p>");
-		out.println("<p>The sum of this two numbers is " + sum  + ".</p></body></html>");
+		out.println("<p>Welcome "+ uppercase.doTran(lowercase)+"!</p>");
+		out.println("<p>The sum of this two numbers is " + sum.sum(firstnumber, secondnumber)  + ".</p></body></html>");
 		
 	}
 
@@ -50,15 +50,4 @@ public class Newservlet extends HttpServlet {
 		doGet(request, response);
 		
 	}
-	
-	protected int Getsum(int firstnumber, int secondnumber)
-	{
-		return firstnumber+secondnumber;
-	}
-	
-	protected String Tran(String input)
-	{
-		return input.toUpperCase();
-	}
-
 }
