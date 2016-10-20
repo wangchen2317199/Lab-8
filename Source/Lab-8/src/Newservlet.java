@@ -31,23 +31,16 @@ public class Newservlet extends HttpServlet {
 		int firstnumber = Integer.parseInt(request.getParameter("firstnumber"));
 		int secondnumber = Integer.parseInt(request.getParameter("secondnumber"));
 		int sum = firstnumber +secondnumber;
+		String lowercase = request.getParameter("name");
+		String uppercase = lowercase.toUpperCase();
 		response.setContentType("text/html");
 		
 		PrintWriter out = response.getWriter();
-		String weather = "http://api.openweathermap.org/data/2.5/weather?lat=" + 39.0997 + "&lon=" + -94.627457 + "&APPID=15be36445a2ae01a56daef040c36b9f3";
 		
 		out.println("<!DOCTYPE html>");
 		out.println("<html><body>");
-		out.println("<p>The sum of this two numbers is " + sum + weather + ".</p></body></html>");
-		
-	
-	     /*       String description = weather["weather"][0]["description"];
-	            String basic = weather["weather"][0]["main"];
-	            String temperature = weather["main"]["temp"] - 273.15;
-	            String name = weather["name"];
-	            $("#test").append("<p id = 'location'>Location: " + name + "</p>");
-	            $("#test").append("<p id = 'weather'>Weather: " + description + ", "  + Math.ceil(temperature) + " degree C</p>");
-		*/
+		out.println("<p>Welcome "+ uppercase+"!</p>");
+		out.println("<p>The sum of this two numbers is " + sum  + ".</p></body></html>");
 		
 	}
 

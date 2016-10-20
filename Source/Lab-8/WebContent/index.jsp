@@ -8,6 +8,9 @@
 </head>
 <body>
 <form action="Newservlet" method='get'>
+<p>Input your name in lowercase: <p>
+<input type='text' name='name'>
+<br><br>
 <p>It's a add calculator, please input two numbers</p>
 <input type='text' name='firstnumber'>
 <p> + </p>
